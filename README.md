@@ -46,7 +46,9 @@ Development install
 Goals
 -----
 
-**Note:** pspec is still in its infancy. Don't expect it to be useful yet. Here is some stuff I want to do:
+**Note:** pspec is still in its infancy. Don't expect it to be useful yet. 
+
+Here's some stuff I want it to do:
 
  - Human readable tests.
  - Beautiful test reports with coloured string diffs. (Similar to [Mocha's](http://visionmedia.github.com/mocha/#string diffs))
