@@ -59,4 +59,6 @@ Here's some stuff I want it to do:
  - Native ``assert`` statement instead of all that ``assertEqual`` rubbish. ([pytest](http://pytest.org/) has the code we need for this)
  - Contexts, before/after hooks, etc.
 
+It's going to be simple, Pythonic and use minimal magic.
+
 
