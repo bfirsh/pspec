@@ -57,7 +57,7 @@ Here's some stuff I want it to do:
 
  - Human readable tests.
  - Beautiful test reports with coloured string diffs. (Similar to [Mocha's](http://visionmedia.github.com/mocha/#string diffs))
- - Native assert statement instead of all the ``assertEqual`` rubbish. ([pytest](http://pytest.org/) has the bits and bobs we need for this)
+ - Native ``assert`` statement instead of all that ``assertEqual`` rubbish. ([pytest](http://pytest.org/) has the code we need for this)
  - Simple design.
  - Minimal magic.
 
