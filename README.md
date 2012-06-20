@@ -56,7 +56,7 @@ Goals
 Here's some stuff I want it to do:
 
  - Beautiful test reports with coloured string diffs. (Similar to [Mocha's](http://visionmedia.github.com/mocha/#string diffs))
- - Native ``assert`` statement instead of all that ``assertEqual`` rubbish. ([pytest](http://pytest.org/) has the code we need for this)
+ - Native ``assert`` statement instead of all that ``assertEqual`` rubbish. ([pytest](http://pytest.org/) and [attest](http://packages.python.org/Attest/) have solved this)
  - Contexts, before/after hooks, etc.
 
 It's going to be simple, Pythonic and use minimal magic.
