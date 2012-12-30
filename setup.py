@@ -6,10 +6,10 @@ from setuptools import setup
 setup(
     name='pspec',
     version='0.0.1',
-    description='',
+    description='Python testing for humans.',
     author='Ben Firshman',
     author_email='ben@firshman.co.uk',
-    url='http://www.ep.io/',
+    url='http://github.com/bfirsh/pspec',
     packages = [
         'pspec'
     ],
