@@ -1,5 +1,5 @@
 from .base import BaseGroup
-from .spec import SpecGroup
+from .root import RootGroup
 import inspect
 
 class ContextManagerGroup(BaseGroup):
@@ -10,7 +10,7 @@ class ContextManagerGroup(BaseGroup):
         self.is_collecting = True
 
         frame = inspect.currentframe(1)
-        self.spec = SpecGroup.from_frame(frame)
+        self.spec = RootGroup.from_frame(frame)
 
         self.parent = self.spec.get_collecting_group()
         self.parent.children.append(self)
@@ -42,7 +42,7 @@ class ContextManagerGroup(BaseGroup):
 
             # Is this local newly defined or changed within this block?
             if name not in self.locals_before or self.locals_before[name] is not value:
-                self.tests.append(value)
+                self.add_test(value)
         
 
 describe = ContextManagerGroup

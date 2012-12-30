@@ -15,7 +15,7 @@ setup(
     ],
     package_data = {},
     include_package_data=True,
-    install_requires = open('requirements.txt').readlines(),
+    #install_requires = open('requirements.txt').readlines(),
     entry_points={
         'console_scripts': [
             'pspec = pspec.cli:main',

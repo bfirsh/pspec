@@ -1,7 +1,7 @@
 pspec
 =====
 
-Python testing for humans.
+Python testing for humans, built with [Attest](http://packages.python.org/Attest/).
 
 Tests shouldn't just be for computers to check your code runs correctly. They can also be used by humans to understand what your code does.
 

@@ -4,18 +4,6 @@ from pspec.groups.base import BaseGroup
 from fixtures import random_spec
 
 with describe('BaseGroup'):
-    with describe('get_results'):
-        def it_returns_a_generator():
-            group = random_spec._pspec.children[0].children[0]
-            assert isinstance(group.get_results(), types.GeneratorType)
-
-        def it_returns_a_result_object_for_every_test_within_itself():
-            group = random_spec._pspec.children[0].children[0]
-            assert len(list(group.get_results())) == 2
-
-        def it_returns_result_objects_for_descendant_tests():
-            assert len(list(random_spec._pspec.get_results())) == 5
-
     with describe('add_child'):
         def it_adds_a_group_to_its_children_and_sets_parent():
             group_a = BaseGroup()
@@ -54,19 +42,18 @@ with describe('BaseGroup'):
 
     with describe('get_descendant_tests'):
         def it_returns_descendant_tests():
-            assert len(random_spec._pspec.get_descendant_tests()) == 5
+            assert len(random_spec._pspec_group.get_descendant_tests()) == 5
 
         def it_does_not_return_own_tests():
-            group = random_spec._pspec.children[0].children[0]
+            group = random_spec._pspec_group.children[0].children[0]
             assert len(group.get_descendant_tests()) == 0
 
-    with describe('get_tests'):
+    with describe('__iter__'):
         def it_returns_descendant_tests():
-            print len(random_spec._pspec.get_tests())
-            assert len(random_spec._pspec.get_tests()) == 5
+            assert len(list(iter(random_spec._pspec_group))) == 5
 
         def it_returns_own_tests():
-            group = random_spec._pspec.children[0].children[0]
-            assert len(group.get_tests()) == 2
+            group = random_spec._pspec_group.children[0].children[0]
+            assert len(list(iter(group))) == 2
 
 

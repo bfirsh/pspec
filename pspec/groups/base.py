@@ -1,4 +1,3 @@
-from ..result import Result
 
 class BaseGroup(object):
     """
@@ -22,18 +21,6 @@ class BaseGroup(object):
 
     def __repr__(self):
         return u'<%s: %s>' % (self.__class__.__name__, self.subject)
-
-    def get_results(self, descendants=True):
-        """
-        Returns a generator which produces results for the tests in this group.
-        """
-        tests = self.tests[:] 
-        if descendants:
-            tests += self.get_descendant_tests()
-        for test in tests:
-            result = Result(test)
-            result.run()
-            yield result
 
     def add_child(self, group):
         """
@@ -65,10 +52,19 @@ class BaseGroup(object):
             tests.extend(child.get_descendant_tests())
         return tests
 
-    def get_tests(self):
+    def __iter__(self):
         """
         Returns a flat list of all tests from this group and its descendants.
         """
-        return self.tests + self.get_descendant_tests()
+        return iter(self.tests + self.get_descendant_tests())
+
+    def add_test(self, test):
+        """
+        Adds a test to this group.
+        """
+        assert not hasattr(test, '_pspec_group')
+
+        test._pspec_group = self
+        self.tests.append(test)
 
 
