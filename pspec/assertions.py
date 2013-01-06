@@ -4,7 +4,7 @@ from contextlib import contextmanager
 def assert_raises(expected):
     try:
         yield
-    except Exception, e:
+    except Exception as e:
         exc_type = type(e)
         if not issubclass(exc_type, expected):
             # let unexpected exceptions pass through
