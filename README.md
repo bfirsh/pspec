@@ -35,7 +35,7 @@ with describe('random'):
 
 They are run with the `pspec` command:
 
-    $ pspec random_spec.py
+    $ pspec random_spec
 
 
 
@@ -48,7 +48,7 @@ Development install
 Test suite
 ----------
 
-    $ pspec spec/
+    $ pspec spec
 
 Goals
 -----
