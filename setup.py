@@ -6,21 +6,23 @@ from setuptools import setup
 setup(
     name='pspec',
     version='0.0.1',
-    description='Python testing for humans.',
+    description='Python testing for humans',
     author='Ben Firshman',
     author_email='ben@firshman.co.uk',
-    url='http://github.com/bfirsh/pspec',
-    packages = [
-        'pspec'
+    url='https://github.com/bfirsh/pspec',
+    packages=['pspec', 'pspec.groups'],
+    package_data={},
+    install_requires=[
+        'docopt==0.6.1',
+        'Attest',
     ],
-    package_data = {},
-    include_package_data=True,
-    #install_requires = open('requirements.txt').readlines(),
+    dependency_links=[
+        'http://github.com/dag/attest/tarball/b1ad455a7bef86b073a46fbc1dffae4b1aac8338#egg=Attest-0.6',
+    ],
     entry_points={
         'console_scripts': [
             'pspec = pspec.cli:main',
         ],
     }
-    #test_suite = 'nose.collector',
 )
 
