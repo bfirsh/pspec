@@ -5,7 +5,7 @@ from setuptools import setup
 
 setup(
     name='pspec',
-    version='0.0.2-dev',
+    version='0.0.2',
     description='Python testing for humans',
     author='Ben Firshman',
     author_email='ben@firshman.co.uk',
