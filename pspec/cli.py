@@ -14,6 +14,12 @@ import sys
 from .collectors import PSpecTests
 
 def main():
+    # When run as a console script (i.e. ``pspec``), the CWD isn't
+    # ``sys.path[0]``, but it should be.
+    cwd = os.getcwd()
+    if sys.path[0] not in ('', cwd):
+        sys.path.insert(0, cwd)
+
     arguments = docopt(__doc__)
     paths = arguments['<path>']
     if not paths:
