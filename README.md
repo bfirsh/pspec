@@ -57,7 +57,7 @@ Goals
 
 Here's some stuff I want it to do:
 
- - Beautiful test reports with coloured string diffs. (Similar to [Mocha's](http://visionmedia.github.com/mocha/#string diffs))
+ - Beautiful test reports with coloured string diffs. (Similar to [Mocha's](https://mochajs.org/#diffs))
  - Contexts, before/after hooks, etc.
 
 It's going to be simple, Pythonic and use minimal magic.
